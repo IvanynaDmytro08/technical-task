@@ -1,0 +1,33 @@
+<h1 class="title">STAR WARS</h1>
+
+<div class="table-container">
+
+  <span *ngIf="isLoading" class="loader"></span>
+
+  <div *ngIf="isError" class="error-block">
+    <p class="error-message">Data loading error</p>
+  </div>
+
+  <table mat-table [dataSource]="nameFilms" class="mat-elevation-z8 demo-table" *ngIf="!isLoading && !isError">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef class="column-header">Title</th>
+      <td mat-cell *matCellDef="let element" class="column-cell">
+        {{element.title}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['title']"></tr>
+
+    <tr
+      mat-row
+      *matRowDef="let row; columns: ['title'];"
+      (click)="goToFilmDetail(row.episode_id)"
+      class="clickable-row">
+    </tr>
+
+    <tr class="no-data-row" *matNoDataRow>
+      <td class="no-data-cell" colspan="3">{{ 'No data to display' }}</td>
+    </tr>
+  </table>
+
+</div>

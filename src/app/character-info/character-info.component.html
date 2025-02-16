@@ -1,0 +1,24 @@
+<div class="character-container">
+  <h1>Character Information</h1>
+
+  <div class="main-info-character-block">
+    <p class="info-item"><strong class="character-title main">Name:</strong> {{ character?.name }}</p>
+    <p class="info-item"><strong class="character-title main">Height:</strong> {{ character?.height }}</p>
+    <p class="info-item"><strong class="character-title main">Mass:</strong> {{ character?.mass }}</p>
+    <p class="info-item"><strong class="character-title main">Gender:</strong> {{ character?.gender }}</p>
+    <p class="info-item"><strong class="character-title main">Birth Year:</strong> {{ character?.birth_year }}</p>
+    <p class="info-item"><strong class="character-title main">Color eye:</strong> {{ character?.eye_color }}</p>
+  </div>
+
+  <div *ngIf="filmsForCharacter.length; else noFilms" class="film-with-character-block">
+    <p class="character-title">Films with "{{ character?.name }}" :</p>
+    <p *ngFor="let item of filmsForCharacter"
+       (click)="navigateToDetailFilm(item)"
+       class="info-item-film">
+      {{ item }}
+    </p>
+  </div>
+  <ng-template #noFilms>
+    <p class="info-item">No films available</p>
+  </ng-template>
+</div>

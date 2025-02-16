@@ -1,0 +1,155 @@
+// film info
+.film-detail-container {
+  padding: 20px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+}
+
+.come-back-to-list-film {
+  display: flex;
+}
+
+.return-to-film-list {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.film-title {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: #9375a6;
+}
+
+.film-info {
+  background-color: #F8F8FF;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.film-info p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.film-info strong {
+  font-weight: bold;
+  color: black;
+}
+
+.opening-crawl {
+  padding-top: 40px;
+  font-style: italic;
+  font-size: 20px;
+  color: #555;
+}
+
+
+//list character
+.characters-section {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list-character {
+  width: 100%;
+  text-align: center;
+}
+
+.characters-section h2 {
+  font-weight: bold;
+  color: #9375a6;
+}
+
+.character-item {
+  font-size: 15px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #6D5A9E19;
+  border-radius: 8px ;
+  border-bottom: 1px solid purple;
+}
+
+.character-item:hover {
+  background-color: #9375a6;
+}
+
+.character-item:active {
+  background-color: #9375a6;
+}
+
+// loader
+.loader {
+  animation: rotate 1s infinite;
+  height: 50px;
+  width: 50px;
+}
+
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.loader:before {
+  animation: ball1 1s infinite;
+  background-color: #fff;
+  box-shadow: 30px 0 0 #ff3d00;
+  margin-bottom: 10px;
+}
+
+.loader:after {
+  animation: ball2 1s infinite;
+  background-color: #ff3d00;
+  box-shadow: 30px 0 0 #fff;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.8)
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2)
+  }
+  100% {
+    transform: rotate(720deg) scale(0.8)
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #ff3d00;
+  }
+  50% {
+    box-shadow: 0 0 0 #ff3d00;
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #ff3d00;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #fff;
+  }
+  50% {
+    box-shadow: 0 0 0 #fff;
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #fff;
+    margin-top: 0;
+  }
+}
+
