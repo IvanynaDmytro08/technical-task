@@ -10,7 +10,7 @@ h1 {
 }
 
 .main-info-character-block {
-  width: 50%;
+  width: 70%;
   box-sizing: border-box;
   padding: 20px;
   border-radius: 10px;
@@ -18,6 +18,7 @@ h1 {
 }
 
 .info-item {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
